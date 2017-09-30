@@ -1,5 +1,5 @@
 import numpy
-import torch
+from matplotlib import pyplot as plt
 import torch.nn as nn
 
 
@@ -57,3 +57,17 @@ class DiscriminatorNet(nn.Module):
     def forward(self, x):
         output = self.main(x)
         return output.view(output.size(0), -1)
+
+
+def show_images(x, n_images=10):
+    x_numpy = x.cpu().numpy() * 0.5 + 0.5
+    plt.figure(figsize=[15, 5])
+    for i in range(min(n_images, x_numpy.shape[0])):
+        plt.subplot(1, n_images, i + 1)
+        plt.axis('off')
+        if x_numpy.shape[1] == 1:
+            plt.imshow(x_numpy[i, 0], vmin=0, vmax=1, cmap='gray')
+        else:
+            plt.imshow(numpy.einsum('cij->ijc', x_numpy[i]))
+
+    plt.show()

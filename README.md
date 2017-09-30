@@ -18,6 +18,6 @@ appropriate mapping to maximize MMD.
 
 ## Technical details
 
-Using pytorch for implementation, I am building upon DCGAN (official implementation from pytorch repo).
+Using [pytorch](https://pytorch.org) for implementation, I am building upon DCGAN (official implementation from pytorch repo).
 
-- 
+Discriminator also contains BatchNormalization as the last layer to ensure the scale of output.

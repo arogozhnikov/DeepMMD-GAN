@@ -22,14 +22,17 @@ appropriate mapping to maximize MMD.
 
 Using [pytorch](https://pytorch.org) for implementation, I am building upon DCGAN (official implementation from pytorch repo).
 
-Discriminator also contains BatchNormalization as the last layer to ensure the scale of output.
+Discriminator also contains BatchNormalization as the last layer to ensure the scale of output, that's quite critical.
+
+Probably, it is among shortest implementations of GANs.
 
 
 ## Results and observations
 
 I haven't done much tuning, but here what was found
 
-- I have observed no divergences when experimenting
+- I have observed no divergences when experimenting, things are rather stable
+  (at the same time at 64*64 definitely buggy generated pictures are appearing)
 - at the same time quality of produced images isn't awesome
 - results for different sizes of projections (2 ** 8 to 2 ** 15) aren't very different, while latter are quite slow
   (this was removed from the final version)

@@ -21,3 +21,10 @@ appropriate mapping to maximize MMD.
 Using [pytorch](https://pytorch.org) for implementation, I am building upon DCGAN (official implementation from pytorch repo).
 
 Discriminator also contains BatchNormalization as the last layer to ensure the scale of output.
+
+
+## Results
+
+- I have observed no divergences when experimenting
+- at the same time quality of produced images isn't awesome
+- results for different sizes of projections, this was removed from the notebooks.
